@@ -9,7 +9,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: whitelist_ssh
     steps:
       - uses: actions/checkout@v4
 
