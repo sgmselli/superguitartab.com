@@ -35,39 +35,39 @@ jobs:
 
           echo "Firewall opened for runner IP"
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: whitelist_ssh
-    steps:
-      - uses: actions/checkout@v4
+  # build:
+  #   name: Build
+  #   runs-on: ubuntu-latest
+  #   needs: whitelist_ssh
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v3
 
-      - name: Log in to DigitalOcean Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: registry.digitalocean.com
-          username: doctl
-          password: ${{ secrets.DO_API_TOKEN }}
+  #     - name: Log in to DigitalOcean Container Registry
+  #       uses: docker/login-action@v3
+  #       with:
+  #         registry: registry.digitalocean.com
+  #         username: doctl
+  #         password: ${{ secrets.DO_API_TOKEN }}
 
-      - name: Build proxy Docker image and push to container registry
-        run: |
-          docker buildx build --platform linux/amd64 -t registry.digitalocean.com/guitar-tabs-registry/app:proxy-latest --push ./proxy/production
+  #     - name: Build proxy Docker image and push to container registry
+  #       run: |
+  #         docker buildx build --platform linux/amd64 -t registry.digitalocean.com/guitar-tabs-registry/app:proxy-latest --push ./proxy/production
 
-      - name: Build client Docker image and push to container registry
-        run: |
-          docker buildx build --platform linux/amd64 -t registry.digitalocean.com/guitar-tabs-registry/app:client-latest --push ./client
+  #     - name: Build client Docker image and push to container registry
+  #       run: |
+  #         docker buildx build --platform linux/amd64 -t registry.digitalocean.com/guitar-tabs-registry/app:client-latest --push ./client
 
-      - name: Build tabs api Docker image and push to container registry
-        run: |
-          docker buildx build --platform linux/amd64 -t registry.digitalocean.com/guitar-tabs-registry/app:tabs-api-latest --push ./tabs-api
+  #     - name: Build tabs api Docker image and push to container registry
+  #       run: |
+  #         docker buildx build --platform linux/amd64 -t registry.digitalocean.com/guitar-tabs-registry/app:tabs-api-latest --push ./tabs-api
 
   deploy:
     name: Deploy with Ansible
     runs-on: ubuntu-latest
-    needs: build
+    # needs: build
     steps:
       - uses: actions/checkout@v4
 
@@ -79,7 +79,7 @@ jobs:
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DO_SSH_KEY }}" > ~/.ssh/id_rsa
+          printf "%s\n" "${{ secrets.DO_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.DO_HOST }} >> ~/.ssh/known_hosts
 
@@ -96,7 +96,7 @@ jobs:
     name: Cleanup Firewall
     runs-on: ubuntu-latest
     if: always()
-    needs: [whitelist_ssh, build, deploy]
+    needs: [whitelist_ssh, deploy]
 
     steps:
       - name: Remove runner IP from firewall
