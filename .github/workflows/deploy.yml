@@ -68,7 +68,7 @@ jobs:
     name: Cleanup Firewall
     runs-on: ubuntu-latest
     if: always()
-    needs: [whitelist_ssh, build, deploy]
+    needs: [whitelist_ssh, build]
 
     steps:
       - name: Remove runner IP from firewall
