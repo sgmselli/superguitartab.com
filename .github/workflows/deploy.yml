@@ -27,6 +27,8 @@ jobs:
           chmod +x wait-for-it.sh
 
       - name: Build and start test environment
+        env:
+          APP_ENV: TEST
         run: |
           docker compose -f ./compose/docker-compose.yml up --build -d
 

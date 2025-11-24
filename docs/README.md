@@ -26,3 +26,6 @@ The full developer documentation is organized into separate sections for clarity
 
 ### Testing
 - [Testing](./testing/testing.md)
+
+### Monitoring
+- [Monitoring](./monitoring/monitoring.md)
