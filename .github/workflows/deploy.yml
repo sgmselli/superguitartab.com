@@ -36,6 +36,11 @@ jobs:
         run: |
           ./wait-for-it.sh localhost:8000 -t 30
 
+      - name: Seed database
+        run: |
+          docker compose -f ./compose/docker-compose.yml exec tabs-api \
+            python -m app.db.seed.seed_tab_data
+
       - name: Install Playwright
         run: |
           cd client
