@@ -57,8 +57,8 @@ jobs:
 
       - name: Run API unit tests
         run: | 
-          cd tabs-api
-          pytest
+          docker compose -f ./compose/docker-compose.yml exec tabs-api \
+            pytest
 
       - name: Install Playwright
         run: |
