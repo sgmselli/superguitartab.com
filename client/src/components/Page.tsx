@@ -5,9 +5,10 @@ import { useLocation } from "react-router-dom";
 
 interface PageProps {
   children: ReactNode;
+  showFaq?: boolean;
 }
 
-export const Page: React.FC<PageProps> = ({ children }) => {
+export const Page: React.FC<PageProps> = ({ children, showFaq }) => {
 
   const { pathname } = useLocation();
 
@@ -17,14 +18,16 @@ export const Page: React.FC<PageProps> = ({ children }) => {
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen">
-      <Navbar />
+      <div className="w-full z-50">
+        <Navbar />
+      </div>
 
       <main className="flex-1 w-[90%] max-w-[1200px]">
         {children}
       </main>
 
-      <div className="w-full mt-30">
-        <Footer />
+      <div className="w-full mt-15">
+        <Footer showFaq={showFaq} />
       </div>
     </div>
   );

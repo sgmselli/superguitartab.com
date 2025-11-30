@@ -1,4 +1,4 @@
-// import { User } from "lucide-react";
+import { ChevronDown, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { LogoAndTextWhite } from "../Logo";
@@ -6,8 +6,12 @@ import { SearchBarModal } from "./Seach";
 import type { DropdownItem } from "./Dropdown";
 import { NavbarDropdown } from "./Dropdown";
 import { MobileDrawer } from "./MobileDrawer";
+import { useAuth } from "../../contexts/auth";
+import { formatTitle } from "../../utils/wordFormatting";
 
 export const Navbar: React.FC = () => {
+
+    const { isAuthenticated, user, loadingUser } = useAuth();
 
     const genres: DropdownItem[] = [
         {name: "Classical", link: "/category/genre/classical"},
@@ -26,7 +30,12 @@ export const Navbar: React.FC = () => {
         {name: "Bass", link: "/category/style/bass"},
     ]
 
-  return (
+    const account: DropdownItem[] = [
+        {name: "Account", link: "/account"},
+        {name: "Logout", link: "/logout"},
+    ]
+
+    return (
     <div className="w-full primary-color-bg surface-color flex flex-col items-center justify-center">
         <div className="relative w-[90%] max-w-[1200px] h-[140px] md:h-[100px] flex flex-col md:flex-row justify-center gap-4 md:gap-0 md:items-center md:justify-between overflow-hidden ">
             <div className="flex items-center justify-between">
@@ -47,19 +56,30 @@ export const Navbar: React.FC = () => {
         <hr className="hidden md:inline w-full h-px bg-gray-700 border-0"/>
         <div className="hidden md:flex w-[90%] max-w-[1200px] h-[55px] items-center justify-between gap-8">
             <div className="flex items-center gap-8">
-                <NavbarDropdown name="Genre" items={genres} />
-                <NavbarDropdown name="Style" items={styles} />
+                <NavbarDropdown name="Genre" icon={ChevronDown} items={genres} />
+                <NavbarDropdown name="Style" icon={ChevronDown} items={styles} />
                 <div tabIndex={0} role="button" className="flex items-center text-sm text-gray-300 font-light gap-2 cursor-pointer hover:text-white">
                     <Link to="/browse">Browse</Link>
                 </div>
             </div>
-            {/* <div className="flex items-center gap-8">
-                <div className="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition-colors">
-                    <User size={18} />
-                    <p className="text-sm font-light">Sign in</p>
-                </div>
-            </div> */}
+            <div className="flex items-center gap-8">
+                {
+                    !loadingUser && (
+                        isAuthenticated() && user ?
+                            <NavbarDropdown name={`${formatTitle(user.first_name)} ${formatTitle(user.last_name)}`} icon={User} items={account} />
+                        :
+                            <Link to="/login">
+                                <div className="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition-colors">
+                                    <div className="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition-colors">
+                                        <User size={18} />
+                                        <p className="text-sm font-light">Sign in</p>
+                                    </div>
+                                </div>
+                            </Link>
+                    )
+                }
+            </div>
         </div>
     </div>
-  );
+    );
 };

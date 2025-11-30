@@ -1,0 +1,151 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+// import { Google } from "../../components/Icons/Icons";
+import { registerUser } from "../../api/user";
+import type { UserCreateRequest } from "../../types/user";
+
+export const Register: React.FC = () => {
+    // -----------------------------
+    // Form State
+    // -----------------------------
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [confirmPassword, setConfirmPassword] = useState<string>("");
+
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
+
+    const buildUserData = (): UserCreateRequest => {
+        return {
+            first_name: firstName,
+            last_name: lastName,
+            email,
+            password,
+            confirmPassword
+        };
+    };
+
+    const handleRegister = async () => {
+        setLoading(true);
+        try {
+            await registerUser(buildUserData());
+            alert("success")
+             console.log(loading)
+             console.log(error)
+        } catch {
+            setError("Failed to create accound.")
+            alert("Failed to create accound.")
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <section className="flex flex-col items-center justify-center mt-15 ">
+            <div className="w-full max-w-lg">
+                <div className="card rounded-lg">
+                    <div className="card-body space-y-6 pb-10 pt-8 px-8 pb-12 text-color">
+                        <div className="flex flex-col items-start gap-1">
+                            <h1 className="text-4xl font-semibold primary-color">Create Account</h1>
+                            <p className="text-lg mt-2 text-gray-500">Create your free account!</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-5">
+                            <div className="flex flex-row gap-4">
+                                <label className="flex-1 form-control">
+                                    <input
+                                        type="text"
+                                        placeholder="First name"
+                                        className="input input-lg input-bordered text-sm"
+                                        name="first_name"
+                                        autoComplete="given-name"
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                    />
+                                </label>
+
+                                <label className="flex-1 form-control">
+                                    <input
+                                        type="text"
+                                        placeholder="Last name"
+                                        className="input input-lg input-bordered text-sm"
+                                        name="last_name"
+                                        autoComplete="family-name"
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
+                                    />
+                                </label>
+                            </div>
+
+                            <label className="form-control">
+                                <input
+                                    type="email"
+                                    placeholder="Email"
+                                    className="input input-lg input-bordered w-full text-sm"
+                                    name="email"
+                                    autoComplete="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </label>
+
+                            <label className="form-control">
+                                <input
+                                    type="password"
+                                    placeholder="Password"
+                                    className="input input-lg input-bordered w-full text-sm"
+                                    name="password"
+                                    autoComplete="new-password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </label>
+
+                            <label className="form-control">
+                                <input
+                                    type="password"
+                                    placeholder="Confirm password"
+                                    className="input input-lg input-bordered w-full text-sm"
+                                    name="confirm_password"
+                                    autoComplete="new-password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                />
+                            </label>
+
+                            <div className="card-actions pt-4 flex flex-col gap-4">
+                                <button
+                                    type="submit"
+                                    onClick={handleRegister}
+                                    className="btn btn-lg text-[15px] primary-color-bg surface-color font-medium rounded-lg btn-block"
+                                >
+                                    Create account
+                                </button>
+
+                                {/* <div className="h-px divider before:bg-gray-300 after:bg-gray-300 text-gray-400">
+                                    OR
+                                </div>
+
+                                <button
+                                    className="btn btn-lg text-[15px] surface-color-bg text-color font-medium rounded-lg border-black btn-block flex items-center justify-center gap-4"
+                                >
+                                    <Google />
+                                    Sign up with Google
+                                </button> */}
+                            </div>
+
+                            <p className="mt-2 text-[16px] text-gray-700">
+                                Have an account?{" "}
+                                <span className="underline hover:text-blue-400">
+                                    <Link to="/login">Sign in</Link>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};

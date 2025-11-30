@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom"
 import { LogoAndTextWhite } from "../Logo"
 import { FAQ } from "./FAQ"
+import { useAuth } from "../../contexts/auth"
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+    showFaq?: boolean
+}
+
+export const Footer: React.FC<FooterProps> = ({showFaq = true}) => {
+
+    const { isAuthenticated, loadingUser } = useAuth();
+
     return (
-        <div className="w-full flex flex-col items-center ">
-            <div className="w-[90%] max-w-[1200px]">
+        <div className="w-full flex flex-col items-center">
+            <div className={`w-[90%] max-w-[1200px] mb-25 mt-10 ${!showFaq && "hidden my-0"}`}>
                 <FAQ />
             </div>
-            <footer className="w-full footer lg:footer-horizontal primary-color-bg text-white py-20 px-8 lg:px-12 xl:px-30 mt-25 text-align-center">
+            <footer className="w-full footer lg:footer-horizontal primary-color-bg text-white py-20 px-8 lg:px-12 xl:px-30 text-align-center">
                 <aside className="max-w-100 flex flex-col gap-6">
                     <div className="w-70">
                         <LogoAndTextWhite />
@@ -24,7 +32,19 @@ export const Footer: React.FC = () => {
                 </aside>
                 <nav>
                     <h6 className="footer-title">Links</h6>
-                    {/* <a className="link link-hover">Sign in</a> */}
+                    { 
+                        !loadingUser && (
+                            isAuthenticated() ? (
+                                <>
+                                    <Link to="/account" className="link link-hover">Account</Link>
+                                </>
+                            )  :
+                                <>
+                                    <Link to="/register" className="link link-hover">Sign up</Link>
+                                    <Link to="/login" className="link link-hover">Sign in</Link>
+                                </>
+                        )
+                    }
                     <Link to="/browse" className="link link-hover">Browse songs</Link>
                 </nav>
                 <nav>

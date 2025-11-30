@@ -8,6 +8,7 @@ from app.business_logic.tab_uploader import TabUploader
 from app.constants.genre import Genre
 from app.constants.style import Style
 from app.external_services.s3_client import S3Client
+from app.schema.user import UserResponse
 from app.services import tab_services
 from app.schema.tab import TabCreate, TabResponse
 from app.db.session import get_session
@@ -16,11 +17,10 @@ from app.constants.http_error_codes import (
     HTTP_400_BAD_REQUEST,
     HTTP_404_NOT_FOUND
 )
-router = APIRouter()
+from app.utils.auth.current_user import get_current_user
+from app.models.user import User
 
-@router.get("/ping")
-async def ping():
-    return {"message": "pong"}
+router = APIRouter()
 
 @router.get("/tab/{tab_id}", response_model=TabResponse)
 async def get_tab(tab_id: int, session: AsyncSession = Depends(get_session)):

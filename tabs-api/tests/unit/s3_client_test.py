@@ -1,6 +1,3 @@
-import pytest
-from io import BytesIO
-
 from app.external_services.s3_client import S3Client
 
 def test_generate_presigned_url_success(mock_boto_client):
