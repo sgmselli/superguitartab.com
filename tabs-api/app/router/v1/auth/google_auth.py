@@ -12,7 +12,8 @@ from app.services.user_services import get_user_by_google_id, create_user_withou
 from app.utils.auth.jwt import create_access_token, create_refresh_token, store_tokens
 from app.utils.logging import Logger, LogLevel
 from app.constants.http_error_codes import (
-    HTTP_200_OK
+    HTTP_200_OK,
+    HTTP_302_FOUND
 )
 from app.auth.oauth.google_oauth import google_oath
 
@@ -26,7 +27,6 @@ async def auth_google_login(request: Request):
 @router.get('/callback', response_model=UserResponse, status_code=HTTP_200_OK)
 async def auth_google_callback(
     request: Request,
-    response: Response,
     session: AsyncSession = Depends(get_session)
 ):
     try:
@@ -64,7 +64,7 @@ async def auth_google_callback(
 
         redirect = RedirectResponse(
             url=f"{settings.frontend_url}/account",
-            status_code=302
+            status_code=HTTP_302_FOUND
         )
 
         store_tokens(redirect, access_token, refresh_token)
