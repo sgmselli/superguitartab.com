@@ -15,3 +15,7 @@ export interface TabResponse {
     file_name: string
     file_url: string | null
 }
+
+export interface TabFileUrlResponse {
+    file_url: string | null
+}

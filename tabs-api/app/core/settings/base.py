@@ -14,14 +14,23 @@ def get_environment_type() -> AppEnvTypes:
 class BaseAppSettings(BaseSettings):
     app_env: AppEnvTypes = get_environment_type()
     api_v1_prefix: str = '/api/v1'
-    title: str = 'Guitar tabs API'
+    title: str = 'superguitartabs.com API'
     docs_url: str = '/docs'
     version: str = '1.0.0'
     allow_credentials: bool = True
     allow_methods: list[str] = ["*"]
     allow_headers: list[str] = ["*"]
+    access_token_expire_minutes: int = 30
+    refresh_token_expire_days: int = 30
+    jwt_encryption_algorithm: str = "HS256"
 
     debug: Optional[bool] = None
+    frontend_url: Optional[str] = None
+    access_secret_key: Optional[str] = None
+    refresh_secret_key: Optional[str] = None
+    session_secret_key: Optional[str] = None
+    google_client_secret: Optional[str] = None
+    google_client_id: Optional[str] = None
     allowed_hosts: Optional[list[str]] = None
     allow_origins: Optional[list[str]] = []
     database_name: Optional[str] = None

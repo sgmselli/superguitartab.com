@@ -4,6 +4,7 @@ from app.core.settings.base import BaseAppSettings
 
 class DevelopmentSettings(BaseAppSettings):
     debug: bool = True
+    frontend_url: str = "http://localhost"
     allowed_hosts: list[str] = ["*"]
     allow_origins: list[str] = ["*"]
     database_name: str = "guitartabsdb"

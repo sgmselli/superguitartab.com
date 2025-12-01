@@ -1,4 +1,4 @@
-from sqlalchemy import or_
+from sqlalchemy import or_, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
@@ -13,6 +13,17 @@ async def get_tab_by_id(tab_id: int, session: AsyncSession) -> Tab:
     """
     tab = await session.get(Tab, tab_id)
     return tab
+
+async def increment_downloads(tab_id: int, session: AsyncSession):
+    """
+    Increment tab downloads by one
+    """
+    await session.execute(
+        update(Tab)
+        .where(Tab.id == tab_id)
+        .values(downloads=Tab.downloads + 1)
+    )
+    await session.commit()
 
 async def create_tab(tab_create: TabCreate, session: AsyncSession) -> Tab:
     """

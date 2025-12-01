@@ -20,6 +20,9 @@ class TabResponse(BaseModel):
 
     model_config = {"from_attributes": True}
 
+class TabFileUrlResponse(BaseModel):
+    file_url: str
+
 class TabCreate(BaseModel):
     song_name: str
     artist: str
