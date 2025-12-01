@@ -5,6 +5,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { Google } from "../../components/Icons/Icons";
 import type { UserLoginRequest } from "../../types/user";
 import { useAuth } from "../../contexts/auth";
+import { Loading } from "../../components/Loading";
 
 export const Login: React.FC = () => {
     // -----------------------------
@@ -42,11 +43,9 @@ export const Login: React.FC = () => {
         try {
             await login(buildLoginData());
             navigate("/account")
-        } catch {
-            setError("Failed to sign in.");
-            alert("Failed to sign in.");
-            console.log(loading)
-             console.log(error)
+        } catch (e: any) {
+            const serverError = e?.response?.data?.detail || "Failed to sign in.";
+            setError(serverError);
         } finally {
             setLoading(false);
         }
@@ -64,7 +63,7 @@ export const Login: React.FC = () => {
         <section className="flex flex-col items-center justify-center mt-15">
             <div className="w-full max-w-lg">
                 <div className="card rounded-lg">
-                    <div className="card-body space-y-6 pb-10 pt-8 px-8 pb-12 text-color">
+                    <div className="card-body space-y-6 py-0 md:pt-8 md:pb-12 px-0 text-color">
                         <div className="flex flex-col items-start gap-1">
                             <h1 className="text-4xl font-semibold primary-color">Sign in</h1>
                             <p className="text-lg mt-2 text-gray-500">
@@ -72,16 +71,23 @@ export const Login: React.FC = () => {
                             </p>
                         </div>
 
+                        {
+                            error && (
+                                <p className="text-error">{error}</p>
+                            )
+                        }
+
                         <div className="flex flex-col space-y-5">
                             <label className="form-control">
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="input input-lg input-bordered w-full text-sm"
+                                    className={`input input-lg input-bordered w-full text-sm ${error && "input-error"}`}
                                     name="email"
                                     autoComplete="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    required
                                 />
                             </label>
 
@@ -89,11 +95,12 @@ export const Login: React.FC = () => {
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     placeholder="Password"
-                                    className="input input-lg input-bordered w-full text-sm pr-12"
+                                    className={`input input-lg input-bordered w-full text-sm pr-12  ${error && "input-error"}`}
                                     name="password"
                                     autoComplete="current-password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
+                                    required
                                 />
 
                             <div className="absolute right-4 inset-y-0 flex items-center z-20">
@@ -112,9 +119,17 @@ export const Login: React.FC = () => {
                                 <button
                                     type="submit"
                                     onClick={handleLogin}
+                                    disabled={loading}
                                     className="btn btn-lg text-[15px] primary-color-bg surface-color font-medium rounded-lg btn-block"
                                 >
-                                    Sign In
+                                    {
+                                        loading ?
+                                            <div className="surface-color">
+                                                <Loading size="sm" />
+                                            </div>
+                                        :
+                                            <p>Sign in</p>
+                                    }
                                 </button>
 
                                 <div className="h-px divider before:bg-gray-300 after:bg-gray-300 text-gray-400">
@@ -123,6 +138,7 @@ export const Login: React.FC = () => {
 
                                 <button
                                     onClick={handleGoogleLogin}
+                                    disabled={loading}
                                     className="btn btn-lg text-[15px] surface-color-bg text-color font-medium rounded-lg border-black btn-block flex items-center justify-center gap-4"
                                 >
                                     <Google />

@@ -71,8 +71,8 @@ export const Navbar: React.FC = () => {
                             <Link to="/login">
                                 <div className="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition-colors">
                                     <div className="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition-colors">
-                                        <User size={18} />
                                         <p className="text-sm font-light">Sign in</p>
+                                        <User size={18} />
                                     </div>
                                 </div>
                             </Link>
