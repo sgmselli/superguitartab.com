@@ -1,24 +1,21 @@
-from uuid import uuid4
-
 from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, or_
 
 from app.business_logic.tab_uploader import TabUploader
 from app.constants.genre import Genre
 from app.constants.style import Style
 from app.external_services.s3_client import S3Client
-from app.schema.user import UserResponse
+from app.models.user import User
 from app.services import tab_services
-from app.schema.tab import TabCreate, TabResponse
+from app.schema.tab import TabCreate, TabResponse, TabFileUrlResponse
 from app.db.session import get_session
 from app.constants.http_error_codes import (
     HTTP_201_CREATED,
     HTTP_400_BAD_REQUEST,
     HTTP_404_NOT_FOUND
 )
+from app.services.tab_services import increment_downloads
 from app.utils.auth.current_user import get_current_user
-from app.models.user import User
 
 router = APIRouter()
 
@@ -35,6 +32,21 @@ async def get_tab(tab_id: int, session: AsyncSession = Depends(get_session)):
     tab_response = TabResponse.model_validate(tab)
     tab_response.file_url = presigned_url
     return tab_response
+
+@router.get("/tab/{tab_id}/download")
+async def get_tab(tab_id: int, session: AsyncSession = Depends(get_session), current_user: User = Depends(get_current_user)):
+    """
+    Route to fetch tab file url and increment downloads
+    """
+    tab = await tab_services.get_tab_by_id(tab_id, session)
+    if not tab:
+        raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail="Tab not found")
+
+    presigned_url = S3Client().generate_presigned_url(tab.file_key)
+    
+    await increment_downloads(tab_id, session)
+
+    return TabFileUrlResponse(file_url=presigned_url)
 
 @router.get("/", response_model=list[TabResponse])
 async def get_tabs(

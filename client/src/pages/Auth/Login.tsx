@@ -6,6 +6,7 @@ import { Google } from "../../components/Icons/Icons";
 import type { UserLoginRequest } from "../../types/user";
 import { useAuth } from "../../contexts/auth";
 import { Loading } from "../../components/Loading";
+import usePageTitle from "../../hooks/usePageTitle";
 
 export const Login: React.FC = () => {
     // -----------------------------
@@ -58,6 +59,8 @@ export const Login: React.FC = () => {
         setLoading(true);
         window.location.href = "api/v1/auth/google/login";
     };
+
+    usePageTitle("Sign in");
 
     return (
         <section className="flex flex-col items-center justify-center mt-15">

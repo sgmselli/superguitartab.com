@@ -1,8 +1,13 @@
-import type { TabResponse } from "../types/tab";
+import type { TabFileUrlResponse, TabResponse } from "../types/tab";
 import { api } from "./index";
 
 export async function getTabData(id: string): Promise<TabResponse>{
   const response = await api.get(`tabs/tab/${id}`);
+  return response.data;
+}
+
+export async function downloadTab(id: string): Promise<TabFileUrlResponse>{
+  const response = await api.get(`tabs/tab/${id}/download`);
   return response.data;
 }
 

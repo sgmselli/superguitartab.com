@@ -4,6 +4,7 @@ import { Google } from "../../components/Icons/Icons";
 import { registerUser } from "../../api/user";
 import type { UserCreateRequest } from "../../types/user";
 import { Loading } from "../../components/Loading";
+import usePageTitle from "../../hooks/usePageTitle";
 
 type RegisterFieldErrors = {
     email?: string;
@@ -68,6 +69,7 @@ export const Register: React.FC = () => {
         window.location.href = "api/v1/auth/google/login";
     };
 
+    usePageTitle("Create an account");
 
     return (
         <section className="flex flex-col items-center justify-center mt-15 ">
@@ -75,7 +77,7 @@ export const Register: React.FC = () => {
                 <div className="card rounded-lg">
                     <div className="card-body space-y-6 py-0 md:pt-8 md:pb-12 px-0 text-color">
                         <div className="flex flex-col items-start gap-1">
-                            <h1 className="text-4xl font-semibold primary-color">Create Account</h1>
+                            <h1 className="text-4xl font-semibold primary-color">Create an account</h1>
                             <p className="text-lg mt-2 text-gray-500">Create your free account!</p>
                         </div>
 
