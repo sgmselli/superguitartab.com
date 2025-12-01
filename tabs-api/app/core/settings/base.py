@@ -25,8 +25,12 @@ class BaseAppSettings(BaseSettings):
     jwt_encryption_algorithm: str = "HS256"
 
     debug: Optional[bool] = None
+    frontend_url: Optional[str] = None
     access_secret_key: Optional[str] = None
     refresh_secret_key: Optional[str] = None
+    session_secret_key: Optional[str] = None
+    google_client_secret: Optional[str] = None
+    google_client_id: Optional[str] = None
     allowed_hosts: Optional[list[str]] = None
     allow_origins: Optional[list[str]] = []
     database_name: Optional[str] = None

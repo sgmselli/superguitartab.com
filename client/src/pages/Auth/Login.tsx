@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { Google } from "../../components/Icons/Icons";
+import { Eye, EyeOff } from "lucide-react";
+
+import { Google } from "../../components/Icons/Icons";
 import type { UserLoginRequest } from "../../types/user";
 import { useAuth } from "../../contexts/auth";
 
@@ -13,6 +15,8 @@ export const Login: React.FC = () => {
 
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+
+    const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
 
@@ -48,6 +52,14 @@ export const Login: React.FC = () => {
         }
     };
 
+    // -----------------------------
+    // Handle Google Login
+    // -----------------------------
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        window.location.href = "api/v1/auth/google/login";
+    };
+
     return (
         <section className="flex flex-col items-center justify-center mt-15">
             <div className="w-full max-w-lg">
@@ -73,16 +85,27 @@ export const Login: React.FC = () => {
                                 />
                             </label>
 
-                            <label className="form-control">
+                            <label className="form-control relative">
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     placeholder="Password"
-                                    className="input input-lg input-bordered w-full text-sm"
+                                    className="input input-lg input-bordered w-full text-sm pr-12"
                                     name="password"
                                     autoComplete="current-password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
+
+                            <div className="absolute right-4 inset-y-0 flex items-center z-20">
+                                <button
+                                    type="button"
+                                    className="text-gray-600 cursor-pointer"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    tabIndex={-1}
+                                >
+                                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                                </button>
+                            </div>
                             </label>
 
                             <div className="card-actions pt-4 flex flex-col gap-4">
@@ -94,16 +117,17 @@ export const Login: React.FC = () => {
                                     Sign In
                                 </button>
 
-                                {/* <div className="h-px divider before:bg-gray-300 after:bg-gray-300 text-gray-400">
+                                <div className="h-px divider before:bg-gray-300 after:bg-gray-300 text-gray-400">
                                     OR
                                 </div>
 
                                 <button
+                                    onClick={handleGoogleLogin}
                                     className="btn btn-lg text-[15px] surface-color-bg text-color font-medium rounded-lg border-black btn-block flex items-center justify-center gap-4"
                                 >
                                     <Google />
                                     Sign in with Google
-                                </button> */}
+                                </button>
                             </div>
 
                             <p className="mt-2 text-[16px] text-gray-700">

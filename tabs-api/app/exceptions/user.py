@@ -21,6 +21,18 @@ class UserEmailDoesNotExist(Exception):
         super().__init__(f"User with email '{email}' does not exists.")
 
 
+class UserGoogleIdDoesNotExist(Exception):
+    def __init__(self, google_id: str):
+        """
+           Raised when attempting to fetch a user with a Google ID that does not exist.
+
+           Args:
+               google_id (str): User Google ID.
+        """
+        self.google_id = google_id
+        super().__init__(f"User with Google ID '{google_id}' does not exists.")
+
+
 class UserIdDoesNotExist(Exception):
     def __init__(self, user_id: int):
         """
