@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { Google } from "../../components/Icons/Icons";
+import { Google } from "../../components/Icons/Icons";
 import { registerUser } from "../../api/user";
 import type { UserCreateRequest } from "../../types/user";
 
@@ -41,6 +41,15 @@ export const Register: React.FC = () => {
             setLoading(false);
         }
     };
+
+    // -----------------------------
+    // Handle Google Login
+    // -----------------------------
+    const handleGoogleRegister= async () => {
+        setLoading(true);
+        window.location.href = "api/v1/auth/google/login";
+    };
+
 
     return (
         <section className="flex flex-col items-center justify-center mt-15 ">
@@ -124,16 +133,17 @@ export const Register: React.FC = () => {
                                     Create account
                                 </button>
 
-                                {/* <div className="h-px divider before:bg-gray-300 after:bg-gray-300 text-gray-400">
+                                <div className="h-px divider before:bg-gray-300 after:bg-gray-300 text-gray-400">
                                     OR
                                 </div>
 
                                 <button
+                                    onClick={handleGoogleRegister}
                                     className="btn btn-lg text-[15px] surface-color-bg text-color font-medium rounded-lg border-black btn-block flex items-center justify-center gap-4"
                                 >
                                     <Google />
                                     Sign up with Google
-                                </button> */}
+                                </button>
                             </div>
 
                             <p className="mt-2 text-[16px] text-gray-700">
