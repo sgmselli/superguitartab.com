@@ -118,6 +118,7 @@ export const Register: React.FC = () => {
                                         className={`input input-lg input-bordered text-sm ${fieldErrors.first_name ? "input-error" : ""}`}
                                         name="first_name"
                                         autoComplete="given-name"
+                                    aria-label="First name input"
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
                                         required
@@ -134,6 +135,7 @@ export const Register: React.FC = () => {
                                         className={`input input-lg input-bordered text-sm ${fieldErrors.last_name ? "input-error" : ""}`}
                                         name="last_name"
                                         autoComplete="family-name"
+                                    aria-label="Last name input"
                                         value={lastName}
                                         onChange={(e) => setLastName(e.target.value)}
                                         required
@@ -152,6 +154,7 @@ export const Register: React.FC = () => {
                                     className={`input input-lg input-bordered w-full text-sm ${fieldErrors.email ? "input-error" : ""}`}
                                     name="email"
                                     autoComplete="email"
+                                    aria-label="Register email input"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -168,6 +171,7 @@ export const Register: React.FC = () => {
                                     className={`input input-lg input-bordered w-full text-sm ${fieldErrors.password ? "input-error" : ""}`}
                                     name="password"
                                     autoComplete="new-password"
+                                    aria-label="Register password input"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -184,6 +188,7 @@ export const Register: React.FC = () => {
                                     className={`input input-lg input-bordered w-full text-sm ${fieldErrors.confirm_password ? "input-error" : ""}`}
                                     name="confirm_password"
                                     autoComplete="new-password"
+                                    aria-label="Confirm password input"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
@@ -199,6 +204,7 @@ export const Register: React.FC = () => {
                                     onClick={handleRegister}
                                     disabled={loading}
                                     className="btn btn-lg text-[15px] primary-color-bg surface-color font-medium rounded-lg btn-block"
+                                    aria-label="Create account button"
                                 >
                                     {
                                         loading ?
@@ -218,6 +224,7 @@ export const Register: React.FC = () => {
                                     onClick={handleGoogleRegister}
                                     disabled={loading}
                                     className="btn btn-lg text-[15px] surface-color-bg text-color font-medium rounded-lg border-black btn-block flex items-center justify-center gap-4"
+                                    aria-label="Sign up with Google button"
                                 >
                                     <Google />
                                     Sign up with Google

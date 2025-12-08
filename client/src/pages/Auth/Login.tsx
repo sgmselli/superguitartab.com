@@ -88,6 +88,7 @@ export const Login: React.FC = () => {
                                     className={`input input-lg input-bordered w-full text-sm ${error && "input-error"}`}
                                     name="email"
                                     autoComplete="email"
+                                    aria-label="Email address input"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -101,6 +102,7 @@ export const Login: React.FC = () => {
                                     className={`input input-lg input-bordered w-full text-sm pr-12  ${error && "input-error"}`}
                                     name="password"
                                     autoComplete="current-password"
+                                    aria-label="Password input"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -124,6 +126,7 @@ export const Login: React.FC = () => {
                                     onClick={handleLogin}
                                     disabled={loading}
                                     className="btn btn-lg text-[15px] primary-color-bg surface-color font-medium rounded-lg btn-block"
+                                    aria-label="Sign in button"
                                 >
                                     {
                                         loading ?
@@ -143,6 +146,7 @@ export const Login: React.FC = () => {
                                     onClick={handleGoogleLogin}
                                     disabled={loading}
                                     className="btn btn-lg text-[15px] surface-color-bg text-color font-medium rounded-lg border-black btn-block flex items-center justify-center gap-4"
+                                    aria-label="Sign in with Google button"
                                 >
                                     <Google />
                                     Sign in with Google

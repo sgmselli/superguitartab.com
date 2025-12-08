@@ -125,7 +125,7 @@ const Song: React.FC = () => {
             <div
                 className='flex flex-col lg:flex-row gap-10 pt-6'
             >
-                <div className='flex-1 flex flex-col gap-4'>
+                <div className='flex-1 flex flex-col gap-4 lg:max-w-[540px]'>
                     <div className='lg:hidden flex flex-col justify-center items-center bg-gray-100 p-5 gap-4 rounded-lg'>
                         <h1 className='text-2xl primary-color font-semibold '>Download {songName} now!</h1>
                         <button aria-label='Download song button for mobile' className='btn btn-lg w-full surface-color primary-color-bg rounded-lg' onClick={handleDownload}>Download tab</button>

@@ -14,12 +14,15 @@ The full developer documentation is organized into separate sections for clarity
 ### API
 - [API Reference](./api/api-reference.md)
 - [Database Models (SQLAlchemy)](./api/models.md)
+- [Authentication](./api/authentication.md)
 
 ### Deployments
 - [Our environments](./deployments/our-environments.md)
 - [CI/CD (GitHub Actions)](./deployments/ci-cd.md)
 - [Infrastructure Provisioning](./deployments/provisioning.md)
 - [Infrastructure Used](./deployments/infrastructure.md)
+- [Environment Variables](./deployments/variables.md)
+
 
 ### Database
 - [Database](./database/database.md)

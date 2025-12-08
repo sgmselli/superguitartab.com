@@ -33,12 +33,14 @@ export const AuthRequiredModal: React.FC<AuthRequiredModalProps> = ({
                     </p>
                     <div className="modal-action flex flex-col sm:flex-row sm:justify-end gap-2">
                         <button
+                            aria-label="Redirect to create an account button"
                             className="btn secondary-color-bg surface-color w-full sm:w-auto"
                             onClick={onRegister}
                         >
                             Create account
                         </button>
                         <button
+                            aria-label="Redirect to sign into an account button"
                             className="btn primary-color-bg surface-color w-full sm:w-auto"
                             onClick={onLogin}
                         >

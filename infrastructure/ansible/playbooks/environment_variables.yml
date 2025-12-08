@@ -32,3 +32,8 @@
           DIGITAL_OCEAN_BUCKET_ACCESS_KEY_ID={{ digital_ocean_bucket_access_key_id }}
           DIGITAL_OCEAN_BUCKET_NAME={{ digital_ocean_bucket_name }}
           DIGITAL_OCEAN_BUCKET_REGION_NAME={{ digital_ocean_bucket_region_name }}
+          ACCESS_SECRET_KEY={{ access_secret_key }}
+          REFRESH_SECRET_KEY={{ refresh_secret_key }}
+          SESSION_SECRET_KEY={{ session_secret_key }}
+          GOOGLE_CLIENT_SECRET={{ google_client_secret }}
+          GOOGLE_CLIENT_ID={{ google_client_id }}

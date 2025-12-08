@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-import { mockTabData } from './fixtures/mock-routes';
+import { navigateToSong } from './helpers/helpers.ts';
+import { mockTabData, mockAuthState, mockDownloadEndpoint } from './fixtures/mock-routes.ts';
 import type { TabResponse } from '../../src/types/tab.ts';
 
 const wonderwallTab: TabResponse = {
@@ -17,36 +18,13 @@ const wonderwallTab: TabResponse = {
   file_name: "wonderwall.pdf"
 };
 
-test('Happy path', async ({ page }) => {
-
+test('Logged-in user can download a tab', async ({ page }) => {
+  await mockAuthState(page, { authenticated: true });
   await mockTabData(page, wonderwallTab);
+  await mockDownloadEndpoint(page, wonderwallTab);
 
-  //Go to landing page
-  await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('superguitartab.com');
+  await navigateToSong(page);
 
-  //Search song
-  const searchButton = page.getByRole('button', { name: /Open search/i });
-  await expect(searchButton).toBeVisible();
-  await searchButton.click();
-
-  await expect(page.locator('#search_bar_modal')).toBeVisible();
-  const searchInput = page.getByRole('textbox', { name: /Search input/i });
-  await expect(searchInput).toBeVisible();
-  await searchInput.click(); 
-  await searchInput.fill("Wonderwall");
-  await expect(searchInput).toHaveValue('Wonderwall', { timeout: 2000 });
-
-  const songRow = page.locator('#song-row-2');
-  await expect(songRow).toBeVisible();
-  await expect(songRow).toContainText('Wonderwall');
-  await expect(songRow).toContainText('Oasis');
-  await songRow.click(); 
-
-  //Download song
-  await expect(page).toHaveURL('/song/2');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Wonderwall');
-  
   const downloadButton = page.getByRole('button', { name: /Download song button/i });
   await expect(downloadButton).toBeVisible();
 
@@ -60,4 +38,19 @@ test('Happy path', async ({ page }) => {
 
   expect(filename).toMatch(/wonderwall.*\.pdf/);
   expect(path).toBeTruthy();
+});
+
+test('Unauthenticated user sees auth modal when attempting download', async ({ page }) => {
+  await mockAuthState(page, { authenticated: false });
+  await mockTabData(page, wonderwallTab);
+  await mockDownloadEndpoint(page, wonderwallTab);
+
+  await navigateToSong(page);
+
+  const downloadButton = page.getByRole('button', { name: /Download song button/i });
+  await downloadButton.click();
+
+  await expect(page.getByRole('heading', { name: /Before you download/i })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Redirect to sign into an account button/i })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Redirect to create an account button/i })).toBeVisible();
 });

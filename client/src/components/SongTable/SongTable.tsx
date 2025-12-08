@@ -24,7 +24,7 @@ interface LevelBadgeProps {
 export const SongTable: React.FC<SongTableProps> = ({songs}) => {
     return (
         <div className="overflow-x-auto rounded-box border-2 border-base-content/6 bg-base-100">
-            <table className="table px-3 [&_td]:py-5">
+            <table className="table px-3 [&_td]:py-5" aria-label="Downloaded tabs table">
                 <tbody>
                     {songs.map((song) => {
                         return <SongTableRow key={song.id} id={song.id} song={song.song_name} artist={song.artist} album={song.album} genre={song.genre} style={song.style} level={song.difficulty} />

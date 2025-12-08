@@ -15,7 +15,7 @@ async def test_get_tab_success(client, monkeypatch):
         style="finger-picking",
         description="Test Description",
         lyrics_included=True,
-        file_key="test-file.mp3",
+        preview_file_key="test-file.mp3",
         file_name = "Test file name",
     )
 
