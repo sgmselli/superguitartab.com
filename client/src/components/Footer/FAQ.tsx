@@ -9,6 +9,11 @@ export const FAQ: React.FC = () => {
             </div>
             <div className="collapse collapse-plus bg-base-100 border border-base-300 py-3">
                 <input type="checkbox" />
+                <div className="collapse-title font-semibold">How do I download a music sheet?</div>
+                <div className="collapse-content text-sm">Browse our selection of music sheets, create an account (or sign in if you have one), then you're ready to download!</div>
+            </div>
+            <div className="collapse collapse-plus bg-base-100 border border-base-300 py-3">
+                <input type="checkbox" />
                 <div className="collapse-title font-semibold">Is it free?</div>
                 <div className="collapse-content text-sm">Currently superguitartab.com is free but a paywall will be introduced soon!</div>
             </div>

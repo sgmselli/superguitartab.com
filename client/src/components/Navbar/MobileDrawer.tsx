@@ -1,5 +1,6 @@
-import { Menu, ArrowLeftToLine, Music, Guitar, type LucideProps, FileSearchCorner } from "lucide-react";
+import { Menu, ArrowLeftToLine, Music, Guitar, User, FileSearchCorner, LogOut, type LucideProps } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/auth";
 
 interface MobileDrawItemProps {
     icon: React.ComponentType<LucideProps>;
@@ -23,6 +24,8 @@ interface MobileDrawCollapseItemProps {
 
 export const MobileDrawer: React.FC = () => {
 
+    const { isAuthenticated, user, loadingUser } = useAuth();
+    
     const genres: CollapseItemProps[] = [
         {name: "Classical", link: "/category/genre/classical"},
         {name: "Country", link: "/category/genre/country"},
@@ -58,10 +61,20 @@ export const MobileDrawer: React.FC = () => {
                 <div className="menu primary-color-bg min-h-full w-80 p-0">
                     <ul>
                         <MobileDrawCloseItem />
-                        {/* <MobileDrawItem icon={User} name="Sign in" link="/account" closeDrawer={closeDrawer} /> */}
                         <MobileDrawItem icon={FileSearchCorner} name="Browse songs" link="/browse" closeDrawer={closeDrawer} />
                         <MobileDrawCollapseItem icon={Music} name="Genres" items={genres} closeDrawer={closeDrawer} />
                         <MobileDrawCollapseItem icon={Guitar} name="Styles" items={styles} closeDrawer={closeDrawer} />
+                        {
+                            !loadingUser && (
+                                isAuthenticated() && user ?
+                                    <>
+                                        <MobileDrawItem icon={User} name="Downloaded tabs" link="/account" closeDrawer={closeDrawer} />
+                                        <MobileDrawItem icon={LogOut} name="Log out" link="/logout" closeDrawer={closeDrawer} />
+                                    </>
+                                :
+                                    <MobileDrawItem icon={User} name="Sign in" link="/account" closeDrawer={closeDrawer} />
+                            )
+                        }
                     </ul>
                     <img
                         src="/images/logo.png"

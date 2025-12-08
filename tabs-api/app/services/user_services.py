@@ -2,9 +2,12 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.exceptions.user import UserAlreadyExists, UserIdDoesNotExist, UserEmailDoesNotExist, UserGoogleIdDoesNotExist
+from app.models.tab import Tab
 from app.models.user import User
+from app.models.user_tab import UserTab
 from app.schema.user import UserCreate
 from app.utils.auth.password import hash_password
+from app.utils.logging import Logger, LogLevel
 
 
 async def get_user_by_id(user_id: int, session: AsyncSession) -> User:
@@ -64,7 +67,8 @@ async def get_user_by_google_id(google_id: str, session: AsyncSession) -> User:
     result = await session.execute(select(User).where(User.google_id == google_id))
     user = result.scalars().first()
     if not user:
-        raise UserGoogleIdDoesNotExist(google_id)
+        Logger.log(LogLevel.ERROR, f"User with Google ID '{google_id}' does not exist.")
+        raise UserGoogleIdDoesNotExist()
     return user
 
 async def create_user_with_password(user_create: UserCreate, session: AsyncSession) -> User:
@@ -87,6 +91,7 @@ async def create_user_with_password(user_create: UserCreate, session: AsyncSessi
     result = await session.execute(select(User).where(User.email == email))
     existing = result.scalars().first()
     if existing:
+        Logger.log(LogLevel.ERROR, f"User with email '{email}' already exists.")
         raise UserAlreadyExists(email)
 
     user = User(
@@ -132,3 +137,14 @@ async def create_user_without_password(user_create: UserCreate, session: AsyncSe
     await session.refresh(user)
 
     return user
+
+async def get_users_downloaded_tabs(user: User, session: AsyncSession) -> list[Tab]:
+    query = (
+        select(Tab)
+        .join(UserTab, UserTab.tab_id == Tab.id)
+        .where(UserTab.user_id == user.id)
+        .order_by(UserTab.downloaded_at.desc())
+    )
+    result = await session.execute(query)
+    tabs = result.scalars().all()
+    return tabs

@@ -17,12 +17,18 @@ async def seed_tabs_from_manifest(path: str = "./song_data.json"):
 
             for t in tabs:
                 result = await session.execute(
-                    select(Tab).where(Tab.file_key == t["file_key"])
+                    select(Tab).where(Tab.id == t["id"])
                 )
                 tab = result.scalars().first()
                 if not tab:
                     session.add(Tab(**t))
                     Logger.log(LogLevel.INFO, f"Added song {t['song_name']} to database.")
+                else:
+                    # Update existing tab with new data
+                    for key, value in t.items():
+                        if hasattr(tab, key):
+                            setattr(tab, key, value)
+                    Logger.log(LogLevel.INFO, f"Updated song {t['song_name']} in database.")
 
                 await session.commit()
         except Exception as e:

@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Enum, Boolean
-from uuid import uuid4
+from sqlalchemy.orm import relationship
 
 from app.db.base_class import Base
 from app.constants.genre import Genre
@@ -19,6 +19,12 @@ class Tab(Base):
     description = Column(String(500), nullable=False)
     lyrics_included = Column(Boolean, nullable=False, default=False)
     file_key = Column(String(255), nullable=False)
+    preview_file_key = Column(String(255), nullable=True)
     file_name = Column(String(255), nullable=False)
     downloads = Column(Integer, nullable=False,  default=0)
 
+    downloaded_by = relationship(
+        "User",
+        secondary="user_tabs",
+        back_populates="downloaded_tabs",
+    )

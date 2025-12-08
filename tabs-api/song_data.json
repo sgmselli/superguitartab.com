@@ -9,9 +9,10 @@
     "difficulty": "Beginner",
     "description": "Released in 1988 on Tracy Chapman's debut album, Fast Car is a folk-rock classic known for its emotional storytelling and minimalist arrangement. The song is built around a steady fingerpicked pattern played on an acoustic steel-string guitar, creating an intimate and reflective sound. It's perfect for players who want to blend soft picking with expressive rhythm while learning one of the most enduring songs of the modern folk era.",
     "lyrics_included": true,
-    "file_key": "tabs/tracy-chapman/fast-car-f7bb810718.pdf",
+    "file_key": "tabs/tracy-chapman/fast-car/fast-car-f7bb810718.pdf",
     "file_name": "fast-car.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/tracy-chapman/fast-car/fast-car-preview-f7bb810718.pdf"
   },
   {
     "id": 2,
@@ -23,9 +24,10 @@
     "difficulty": "Beginner",
     "description": "Released in 1995 on Oasis's landmark album '(What's the Story) Morning Glory?', 'Wonderwall' has become one of the most recognizable acoustic songs of the 1990s. Built around a steady strumming pattern in a capoed open position, it blends simple chord shapes with a rich, rhythmic groove that\u2019s great for singalongs. The song is perfect for guitarists looking to develop timing, chord transitions, and dynamics while learning an enduring Britpop anthem.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/wonderwall-351528e256.pdf",
+    "file_key": "tabs/oasis/wonderwall/wonderwall-351528e256.pdf",
     "file_name": "wonderwall.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/wonderwall/wonderwall-preview-351528e256.pdf"
   },
   {
     "id": 3,
@@ -37,9 +39,10 @@
     "difficulty": "Intermediate",
     "description": "Released in 1992 on the Red Hot Chili Peppers\u2019 album 'Blood Sugar Sex Magik', 'Under the Bridge' is an alternative rock classic known for its soulful melody and intricate guitar work by John Frusciante. The song begins with a distinctive arpeggiated chord progression that requires clean tone, finger control, and smooth transitions between chord shapes. It\u2019s an excellent choice for players looking to refine their picking precision, dynamics, and expressive rhythm in a modern rock context.",
     "lyrics_included": false,
-    "file_key": "tabs/red-hot-chili-peppers/under-the-bridge-1e523bf37f.pdf",
+    "file_key": "tabs/red-hot-chili-peppers/under-the-bridge/under-the-bridge-1e523bf37f.pdf",
     "file_name": "under-the-bridge.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/red-hot-chili-peppers/under-the-bridge/under-the-bridge-preview-1e523bf37f.pdf"
   },
   {
     "id": 4,
@@ -51,9 +54,10 @@
     "difficulty": "Intermediate",
     "description": "Released in 1975 on Pink Floyd\u2019s iconic album 'Wish You Were Here', this timeless acoustic piece blends both strumming and fingerpicking to create a reflective, atmospheric sound. The intro\u2019s open-string motif and smooth chord transitions make it a rewarding study in expressive acoustic playing. Perfect for guitarists who want to explore dynamics, tone control, and emotional phrasing while learning one of rock\u2019s most beloved songs.",
     "lyrics_included": false,
-    "file_key": "tabs/pink-floyd/wish-you-were-here-ee7c682f9d.pdf",
+    "file_key": "tabs/pink-floyd/wish-you-were-here/wish-you-were-here-ee7c682f9d.pdf",
     "file_name": "wish-you-were-here.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/pink-floyd/wish-you-were-here/wish-you-were-here-preview-ee7c682f9d.pdf"
   },
   {
     "id": 5,
@@ -65,9 +69,10 @@
     "difficulty": "Beginner",
     "description": "Released in 1972 on Deep Purple\u2019s landmark album 'Machine Head', 'Smoke on the Water' is one of the most iconic rock songs ever recorded. Built around its legendary four-note riff, the song is perfect for beginners learning power chords, simple picking, and rhythmic control. It\u2019s a great introduction to rock guitar technique and an essential piece for any player\u2019s repertoire.",
     "lyrics_included": false,
-    "file_key": "tabs/deep-purple/smoke-on-the-water-7b041467fa.pdf",
+    "file_key": "tabs/deep-purple/smoke-on-the-water/smoke-on-the-water-7b041467fa.pdf",
     "file_name": "smoke-on-the-water.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/deep-purple/smoke-on-the-water/smoke-on-the-water-preview-7b041467fa.pdf"
   },
   {
     "id": 6,
@@ -79,9 +84,10 @@
     "difficulty": "Intermediate",
     "description": "Eric Clapton\u2019s emotional ballad from the 'Unplugged' album features gentle fingerstyle guitar and expressive chord voicings. It's ideal for players looking to build dynamic control and accuracy.",
     "lyrics_included": false,
-    "file_key": "tabs/eric-clapton/tears-in-heaven-5b369937aa.pdf",
+    "file_key": "tabs/eric-clapton/tears-in-heaven/tears-in-heaven-5b369937aa.pdf",
     "file_name": "eric-clapton-tears-in-heavan.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/eric-clapton/tears-in-heaven/tears-in-heaven-preview-5b369937aa.pdf"
   },
   {
     "id": 7,
@@ -93,9 +99,10 @@
     "difficulty": "Advanced",
     "description": "Sting\u2019s acoustic classic blends gentle fingerpicking with warm folk-inspired harmony. A great practice piece for expressive playing and steady right-hand patterns.",
     "lyrics_included": false,
-    "file_key": "tabs/sting/fields-of-gold-1a1d73ef91.pdf",
+    "file_key": "tabs/sting/fields-of-gold/fields-of-gold-1a1d73ef91.pdf",
     "file_name": "fields-of-gold.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/sting/fields-of-gold/fields-of-gold-preview-1a1d73ef91.pdf"
   },
   {
     "id": 8,
@@ -107,9 +114,10 @@
     "difficulty": "Beginner",
     "description": "Coldplay\u2019s anthemic pop hit translates easily to acoustic guitar with a steady strumming pattern, making it a great choice for beginners.",
     "lyrics_included": false,
-    "file_key": "tabs/coldplay/viva-la-vida-c07b7b9ff1.pdf",
+    "file_key": "tabs/coldplay/viva-la-vida/viva-la-vida-c07b7b9ff1.pdf",
     "file_name": "viva-la-vida.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/coldplay/viva-la-vida/viva-la-vida-preview-c07b7b9ff1.pdf"
   },
   {
     "id": 9,
@@ -121,9 +129,10 @@
     "difficulty": "Beginner",
     "description": "A traditional folk-style piece featuring simple chords and steady strumming suitable for beginners.",
     "lyrics_included": true,
-    "file_key": "tabs/traditional/sailor-song-1ce604e72d.pdf",
+    "file_key": "tabs/traditional/the-sailor-song/sailor-song-1ce604e72d.pdf",
     "file_name": "sailor-song.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/traditional/the-sailor-song/sailor-song-preview-1ce604e72d.pdf"
   },
   {
     "id": 10,
@@ -135,9 +144,10 @@
     "difficulty": "Beginner",
     "description": "A classic Oasis acoustic track featuring straightforward chord shapes and relaxed strumming.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/married-with-children-a73d3b8f17.pdf",
+    "file_key": "tabs/oasis/married-with-children/married-with-children-a73d3b8f17.pdf",
     "file_name": "married-with-children.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/married-with-children/married-with-children-preview-a73d3b8f17.pdf"
   },
   {
     "id": 11,
@@ -149,9 +159,10 @@
     "difficulty": "Beginner",
     "description": "A moody indie classic with simple chord progressions and atmospheric strumming.",
     "lyrics_included": true,
-    "file_key": "tabs/arctic-monkeys/505-9d8efb381c.pdf",
+    "file_key": "tabs/arctic-monkeys/505/505-9d8efb381c.pdf",
     "file_name": "arctic-monkeys-505.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/arctic-monkeys/505/505-preview-9d8efb381c.pdf"
   },
   {
     "id": 12,
@@ -163,9 +174,10 @@
     "difficulty": "Advanced",
     "description": "Known for its iconic fingerpicked chord shapes, this Sting masterpiece is excellent for building fingerstyle consistency.",
     "lyrics_included": false,
-    "file_key": "tabs/sting/shape-of-my-heart-c1eca0af80.pdf",
+    "file_key": "tabs/sting/shape-of-my-heart/shape-of-my-heart-c1eca0af80.pdf",
     "file_name": "shape-of-my-heart.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/sting/shape-of-my-heart/shape-of-my-heart-preview-c1eca0af80.pdf"
   },
   {
     "id": 13,
@@ -177,9 +189,10 @@
     "difficulty": "Beginner",
     "description": "Built around its hypnotic riff and heavy strumming patterns, this indie-rock hit is perfect for early players.",
     "lyrics_included": false,
-    "file_key": "tabs/arctic-monkeys/do-i-wanna-know-4523ab2ade.pdf",
+    "file_key": "tabs/arctic-monkeys/do-i-wanna-know/do-i-wanna-know-4523ab2ade.pdf",
     "file_name": "do-i-wanna-know.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/arctic-monkeys/do-i-wanna-know/do-i-wanna-know-preview-4523ab2ade.pdf"
   },
   {
     "id": 14,
@@ -191,9 +204,10 @@
     "difficulty": "Beginner",
     "description": "A soft pop ballad featuring a simple fingerpicking pattern that is perfect for beginners.",
     "lyrics_included": true,
-    "file_key": "tabs/the-plain-white-ts/hey-there-delilah-a447f9fc99.pdf",
+    "file_key": "tabs/the-plain-white-ts/hey-there-delilah/hey-there-delilah-a447f9fc99.pdf",
     "file_name": "hey-there-deliliah.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/the-plain-white-ts/hey-there-delilah/hey-there-delilah-preview-a447f9fc99.pdf"
   },
   {
     "id": 15,
@@ -205,9 +219,10 @@
     "difficulty": "Beginner",
     "description": "A driving indie-rock track with energetic strumming and accessible chords.",
     "lyrics_included": false,
-    "file_key": "tabs/arctic-monkeys/fake-tales-of-san-francisco-852ee42dd0.pdf",
+    "file_key": "tabs/arctic-monkeys/fake-tales-of-san-francisco/fake-tales-of-san-francisco-852ee42dd0.pdf",
     "file_name": "arctic-monkeys-fake-tales-of-san-francisco-electirc.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/arctic-monkeys/fake-tales-of-san-francisco/fake-tales-of-san-francisco-preview-852ee42dd0.pdf"
   },
   {
     "id": 16,
@@ -219,9 +234,10 @@
     "difficulty": "Intermediate",
     "description": "A timeless Beatles classic with gentle fingerpicking and melodic chord voicings.",
     "lyrics_included": false,
-    "file_key": "tabs/the-beatles/yesterday-3a8886068f.pdf",
+    "file_key": "tabs/the-beatles/yesterday/yesterday-3a8886068f.pdf",
     "file_name": "yesterday.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/the-beatles/yesterday/yesterday-preview-3a8886068f.pdf"
   },
   {
     "id": 17,
@@ -233,9 +249,10 @@
     "difficulty": "Beginner",
     "description": "The bass arrangement for Arctic Monkeys' hit, focusing on steady rhythm and groove.",
     "lyrics_included": false,
-    "file_key": "tabs/arctic-monkeys/do-i-wanna-know-bass-b0c52123ec.pdf",
+    "file_key": "tabs/arctic-monkeys/do-i-wanna-know-bass/do-i-wanna-know-bass-b0c52123ec.pdf",
     "file_name": "arctic-monkeys-do-i-wanna-know-bass.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/arctic-monkeys/do-i-wanna-know-bass/do-i-wanna-know-bass-preview-b0c52123ec.pdf"
   },
   {
     "id": 18,
@@ -247,9 +264,10 @@
     "difficulty": "Intermediate",
     "description": "Metallica's iconic ballad features expressive fingerpicking and melodic phrasing, ideal for building dynamic technique.",
     "lyrics_included": false,
-    "file_key": "tabs/metallica/nothing-else-matters-11130b498d.pdf",
+    "file_key": "tabs/metallica/nothing-else-matters/nothing-else-matters-11130b498d.pdf",
     "file_name": "metallica-nothing-else-matters.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/metallica/nothing-else-matters/nothing-else-matters-preview-11130b498d.pdf"
   },
   {
     "id": 19,
@@ -261,9 +279,10 @@
     "difficulty": "Beginner",
     "description": "A simple and widely recognized melody, easy for beginners to play.",
     "lyrics_included": false,
-    "file_key": "tabs/traditional/happy-birthday-ac4e24bb9d.pdf",
+    "file_key": "tabs/traditional/happy-birthday/happy-birthday-ac4e24bb9d.pdf",
     "file_name": "Happy-Birthday.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/traditional/happy-birthday/happy-birthday-preview-ac4e24bb9d.pdf"
   },
   {
     "id": 20,
@@ -275,9 +294,10 @@
     "difficulty": "Advanced",
     "description": "A legendary rock masterpiece with intricate fingerstyle passages and dynamic musical sections.",
     "lyrics_included": false,
-    "file_key": "tabs/led-zeppelin/stairway-to-heaven-239c66baff.pdf",
+    "file_key": "tabs/led-zeppelin/stairway-to-heaven/stairway-to-heaven-239c66baff.pdf",
     "file_name": "led-zeppelin-stairway-to-heaven.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/led-zeppelin/stairway-to-heaven/stairway-to-heaven-preview-239c66baff.pdf"
   },
   {
     "id": 21,
@@ -289,9 +309,10 @@
     "difficulty": "Beginner",
     "description": "A gentle folk classic built around flowing fingerpicking and emotional phrasing, perfect for developing right-hand accuracy.",
     "lyrics_included": false,
-    "file_key": "tabs/fleetwood-mac/landslide-966e9c2d46.pdf",
+    "file_key": "tabs/fleetwood-mac/landslide/landslide-966e9c2d46.pdf",
     "file_name": "Fleetwood-Mac.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/fleetwood-mac/landslide/landslide-preview-966e9c2d46.pdf"
   },
   {
     "id": 22,
@@ -303,9 +324,10 @@
     "difficulty": "Beginner",
     "description": "A bright and upbeat Oasis acoustic track using simple chord shapes and steady strumming, great for beginners.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/shes-electric-e4ad00545c.pdf",
+    "file_key": "tabs/oasis/shes-electric/shes-electric-e4ad00545c.pdf",
     "file_name": "shes-electric.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/shes-electric/shes-electric-preview-e4ad00545c.pdf"
   },
   {
     "id": 23,
@@ -317,9 +339,10 @@
     "difficulty": "Beginner",
     "description": "One of Oasis' signature anthems featuring uplifting melodies and straightforward strumming patterns.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/live-forever-50419f3115.pdf",
+    "file_key": "tabs/oasis/live-forever/live-forever-50419f3115.pdf",
     "file_name": "oasis-live-forever.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/live-forever/live-forever-preview-50419f3115.pdf"
   },
   {
     "id": 24,
@@ -331,9 +354,10 @@
     "difficulty": "Beginner",
     "description": "The well-known holiday classic arranged with easy chords and simple rhythm, perfect for beginners.",
     "lyrics_included": true,
-    "file_key": "tabs/traditional/jingle-bells-4d4b85cee6.pdf",
+    "file_key": "tabs/traditional/jingle-bells/jingle-bells-4d4b85cee6.pdf",
     "file_name": "jingle-bells.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/traditional/jingle-bells/jingle-bells-preview-4d4b85cee6.pdf"
   },
   {
     "id": 25,
@@ -345,9 +369,10 @@
     "difficulty": "Beginner",
     "description": "Coldplay's emotional ballad arranged for guitar with accessible chord shapes and gentle strumming.",
     "lyrics_included": false,
-    "file_key": "tabs/coldplay/fix-you-e60b2046ea.pdf",
+    "file_key": "tabs/coldplay/fix-you/fix-you-e60b2046ea.pdf",
     "file_name": "fix-you.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/coldplay/fix-you/fix-you-preview-e60b2046ea.pdf"
   },
   {
     "id": 26,
@@ -359,9 +384,10 @@
     "difficulty": "Intermediate",
     "description": "A Metallica classic featuring expressive fingerpicked intros and dynamic transitions, ideal for growing technical control.",
     "lyrics_included": false,
-    "file_key": "tabs/metallica/fade-to-black-b02cc4a808.pdf",
+    "file_key": "tabs/metallica/fade-to-black/fade-to-black-b02cc4a808.pdf",
     "file_name": "metallica-fade-to-black.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/metallica/fade-to-black/fade-to-black-preview-b02cc4a808.pdf"
   },
   {
     "id": 27,
@@ -373,9 +399,10 @@
     "difficulty": "Intermediate",
     "description": "A complex arrangement of Queen's iconic epic, demanding strong fingerstyle skills and dynamic playing.",
     "lyrics_included": true,
-    "file_key": "tabs/queen/bohemian-rhapsody-7dd24eef4d.pdf",
+    "file_key": "tabs/queen/bohemian-rhapsody/bohemian-rhapsody-7dd24eef4d.pdf",
     "file_name": "bohemian-rhapsody.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/queen/bohemian-rhapsody/bohemian-rhapsody-preview-7dd24eef4d.pdf"
   },
   {
     "id": 28,
@@ -387,9 +414,10 @@
     "difficulty": "Beginner",
     "description": "A bass arrangement focusing on Oasis' driving rhythm and steady low-end groove.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/morning-glory-bass-67be472c79.pdf",
+    "file_key": "tabs/oasis/morning-glory-bass/morning-glory-bass-67be472c79.pdf",
     "file_name": "oasis-morning-glory-bass.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/morning-glory-bass/morning-glory-bass-preview-67be472c79.pdf"
   },
   {
     "id": 29,
@@ -401,9 +429,10 @@
     "difficulty": "Intermediate",
     "description": "A punchy indie-rock track with heavier riffs and more aggressive strumming, great for developing rhythmic precision.",
     "lyrics_included": false,
-    "file_key": "tabs/arctic-monkeys/r-u-mine-c01f63d48c.pdf",
+    "file_key": "tabs/arctic-monkeys/r-u-mine/r-u-mine-c01f63d48c.pdf",
     "file_name": "arctic-monkeys-r-u-mine.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/arctic-monkeys/r-u-mine/r-u-mine-preview-c01f63d48c.pdf"
   },
   {
     "id": 31,
@@ -415,9 +444,10 @@
     "difficulty": "Beginner",
     "description": "A heartfelt Oasis tune with straightforward strumming and accessible chord changes.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/little-by-little-1a0a776ae6.pdf",
+    "file_key": "tabs/oasis/little-by-little/little-by-little-1a0a776ae6.pdf",
     "file_name": "little-by-little.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/little-by-little/little-by-little-preview-1a0a776ae6.pdf"
   },
   {
     "id": 32,
@@ -429,9 +459,10 @@
     "difficulty": "Beginner",
     "description": "Featuring one of the most recognizable riffs in rock, this song is perfect for beginners learning simpler riffs. Unlike most music sheet websites you find - this tab includes the whole song from intro, verses, chorus and outro.",
     "lyrics_included": false,
-    "file_key": "tabs/the-white-stripes/seven-nation-army-feb3c32494.pdf",
+    "file_key": "tabs/the-white-stripes/seven-nation-army/seven-nation-army-feb3c32494.pdf",
     "file_name": "seven-nation-army.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/the-white-stripes/seven-nation-army/seven-nation-army-preview-feb3c32494.pdf"
   },
   {
     "id": 33,
@@ -443,9 +474,10 @@
     "difficulty": "Advanced",
     "description": "A soulful ballad showcasing expressive bends, tasteful fingerstyle, and emotional guitar phrasing.",
     "lyrics_included": false,
-    "file_key": "tabs/john-mayer/slow-dancing-in-a-burning-room-f6cae83590.pdf",
+    "file_key": "tabs/john-mayer/slow-dancing-in-a-burning-room/slow-dancing-in-a-burning-room-f6cae83590.pdf",
     "file_name": "john-mayer-slow-dancing-in-a-burning-room.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/john-mayer/slow-dancing-in-a-burning-room/slow-dancing-in-a-burning-room-preview-f6cae83590.pdf"
   },
   {
     "id": 34,
@@ -457,9 +489,10 @@
     "difficulty": "Intermediate",
     "description": "A fingerstyle essential with alternating bass and melodic upper-voice lines, perfect for developing coordination.",
     "lyrics_included": true,
-    "file_key": "tabs/the-beatles/blackbird-42ad57f04f.pdf",
+    "file_key": "tabs/the-beatles/blackbird/blackbird-42ad57f04f.pdf",
     "file_name": "blackbird.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/the-beatles/blackbird/blackbird-preview-42ad57f04f.pdf"
   },
   {
     "id": 35,
@@ -471,9 +504,10 @@
     "difficulty": "Intermediate",
     "description": "A modern rock ballad arranged with simple strumming and steady rhythm, ideal for new players.",
     "lyrics_included": false,
-    "file_key": "tabs/imagine-dragons/demons-c9875ff192.pdf",
+    "file_key": "tabs/imagine-dragons/demons/demons-c9875ff192.pdf",
     "file_name": "demons.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/imagine-dragons/demons/demons-preview-c9875ff192.pdf"
   },
   {
     "id": 36,
@@ -485,9 +519,10 @@
     "difficulty": "Intermediate",
     "description": "Hozier\u2019s soulful indie hit arranged for guitar with big, open-chord strumming patterns.",
     "lyrics_included": false,
-    "file_key": "tabs/hozier/take-me-to-church-d8621a95dc.pdf",
+    "file_key": "tabs/hozier/take-me-to-church/take-me-to-church-d8621a95dc.pdf",
     "file_name": "take-me-to-church.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/hozier/take-me-to-church/take-me-to-church-preview-d8621a95dc.pdf"
   },
   {
     "id": 37,
@@ -499,9 +534,10 @@
     "difficulty": "Advanced",
     "description": "A clean, arpeggiated fingerstyle pattern drives this Police classic, excellent for precision and timing practice.",
     "lyrics_included": false,
-    "file_key": "tabs/the-police/every-breath-you-take-0a71d683b6.pdf",
+    "file_key": "tabs/the-police/every-breath-you-take/every-breath-you-take-0a71d683b6.pdf",
     "file_name": "every-breath-you-take.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/the-police/every-breath-you-take/every-breath-you-take-preview-0a71d683b6.pdf"
   },
   {
     "id": 38,
@@ -513,9 +549,10 @@
     "difficulty": "Intermediate",
     "description": "A fingerstyle arrangement of Oasis' classic anthem, blending melodic lines with flowing arpeggios.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/dont-look-back-in-anger-f3200a5610.pdf",
+    "file_key": "tabs/oasis/dont-look-back-in-anger-fingerstyle/dont-look-back-in-anger-f3200a5610.pdf",
     "file_name": "dont-look-back-in-anger-finger-style.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/dont-look-back-in-anger-fingerstyle/dont-look-back-in-anger-preview-f3200a5610.pdf"
   },
   {
     "id": 39,
@@ -527,9 +564,10 @@
     "difficulty": "Beginner",
     "description": "A timeless romantic classic arranged for beginner guitarists using gentle strumming and simple chords.",
     "lyrics_included": false,
-    "file_key": "tabs/elvis-presley/cant-help-falling-in-love-f631ce35be.pdf",
+    "file_key": "tabs/elvis-presley/cant-help-falling-in-love/cant-help-falling-in-love-f631ce35be.pdf",
     "file_name": "elvis-presley-cant-help-falling-in-love.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/elvis-presley/cant-help-falling-in-love/cant-help-falling-in-love-preview-f631ce35be.pdf"
   },
   {
     "id": 40,
@@ -541,9 +579,10 @@
     "difficulty": "Beginner",
     "description": "A soft pop song with simple chords and a laid-back strumming pattern perfect for beginners.",
     "lyrics_included": true,
-    "file_key": "tabs/maroon-5/memories-bfff21e557.pdf",
+    "file_key": "tabs/maroon-5/memories/memories-bfff21e557.pdf",
     "file_name": "memories.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/maroon-5/memories/memories-preview-bfff21e557.pdf"
   },
   {
     "id": 41,
@@ -555,9 +594,10 @@
     "difficulty": "Beginner",
     "description": "Ed Sheeran\u2019s romantic ballad featuring a simple fingerpicking pattern ideal for new players.",
     "lyrics_included": true,
-    "file_key": "tabs/ed-sheeran/perfect-5f344335bd.pdf",
+    "file_key": "tabs/ed-sheeran/perfect/perfect-5f344335bd.pdf",
     "file_name": "perfect.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/ed-sheeran/perfect/perfect-preview-5f344335bd.pdf"
   },
   {
     "id": 42,
@@ -569,9 +609,10 @@
     "difficulty": "Intermediate",
     "description": "A hauntingly beautiful fingerstyle arrangement known for its rich arpeggios and expressive phrasing.",
     "lyrics_included": false,
-    "file_key": "tabs/jeff-buckley/hallelujah-9b4a43997b.pdf",
+    "file_key": "tabs/jeff-buckley/hallelujah/hallelujah-9b4a43997b.pdf",
     "file_name": "jeff-buckley-HALLELUJAH.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/jeff-buckley/hallelujah/hallelujah-preview-9b4a43997b.pdf"
   },
   {
     "id": 43,
@@ -583,9 +624,10 @@
     "difficulty": "Beginner",
     "description": "A cheerful holiday tune arranged with simple, kid-friendly strumming patterns.",
     "lyrics_included": false,
-    "file_key": "tabs/traditional/frosty-the-snowman-df92c72584.pdf",
+    "file_key": "tabs/traditional/frosty-the-snowman/frosty-the-snowman-df92c72584.pdf",
     "file_name": "Frosty-the-Snowman.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/traditional/frosty-the-snowman/frosty-the-snowman-preview-df92c72584.pdf"
   },
   {
     "id": 44,
@@ -597,9 +639,10 @@
     "difficulty": "Beginner",
     "description": "An electric guitar arrangement of Oasis\u2019 emotional anthem, featuring steady strumming and classic Brit-rock chord work.",
     "lyrics_included": false,
-    "file_key": "tabs/oasis/stand-by-me-e872047287.pdf",
+    "file_key": "tabs/oasis/stand-by-me/stand-by-me-e872047287.pdf",
     "file_name": "oasis-stand-by-me-electric.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/oasis/stand-by-me/stand-by-me-preview-e872047287.pdf"
   },
   {
     "id": 45,
@@ -611,9 +654,10 @@
     "difficulty": "Intermediate",
     "description": "An acoustic RHCP track built on flowing fingerpicked patterns and intricate chord voicings.",
     "lyrics_included": false,
-    "file_key": "tabs/red-hot-chili-peppers/road-trippin-01641b7417.pdf",
+    "file_key": "tabs/red-hot-chili-peppers/road-trippin/road-trippin-01641b7417.pdf",
     "file_name": "road-trippin.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/red-hot-chili-peppers/road-trippin/road-trippin-preview-01641b7417.pdf"
   },
   {
     "id": 46,
@@ -625,9 +669,10 @@
     "difficulty": "Beginner",
     "description": "Coldplay's early hit arranged for guitar with bright open chords and relaxed strumming.",
     "lyrics_included": false,
-    "file_key": "tabs/coldplay/yellow-396af85e47.pdf",
+    "file_key": "tabs/coldplay/yellow/yellow-396af85e47.pdf",
     "file_name": "yellow.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/coldplay/yellow/yellow-preview-396af85e47.pdf"
   },
   {
     "id": 47,
@@ -639,9 +684,10 @@
     "difficulty": "Advanced",
     "description": "A jazz standard adapted for guitar with extended chords and a smooth swing rhythm.",
     "lyrics_included": false,
-    "file_key": "tabs/frank-sinatra/fly-me-to-the-moon-d6d36420ec.pdf",
+    "file_key": "tabs/frank-sinatra/fly-me-to-the-moon/fly-me-to-the-moon-d6d36420ec.pdf",
     "file_name": "frank-sinatra-fly-me-to-the-moon.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/frank-sinatra/fly-me-to-the-moon/fly-me-to-the-moon-preview-d6d36420ec.pdf"
   },
   {
     "id": 48,
@@ -653,8 +699,9 @@
     "difficulty": "Intermediate",
     "description": "A modern punk-rock classic built on simple chords and steady power-chord strumming.",
     "lyrics_included": false,
-    "file_key": "tabs/green-day/boulevard-of-broken-dreams-1e02e5853a.pdf",
+    "file_key": "tabs/green-day/boulevard-of-broken-dreams/boulevard-of-broken-dreams-1e02e5853a.pdf",
     "file_name": "green-day-boulevard-of-broken-dreams.pdf",
-    "downloads": 0
+    "downloads": 0,
+    "preview_file_key": "tabs/green-day/boulevard-of-broken-dreams/boulevard-of-broken-dreams-preview-1e02e5853a.pdf"
   }
 ]

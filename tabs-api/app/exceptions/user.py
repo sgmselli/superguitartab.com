@@ -7,7 +7,7 @@ class UserAlreadyExists(Exception):
                email (str): User email.
            """
         self.email = email
-        super().__init__(f"User with email '{email}' already exists.")
+        super().__init__(f"{email} is already taken.")
 
 class UserEmailDoesNotExist(Exception):
     def __init__(self, email: str):
@@ -18,19 +18,15 @@ class UserEmailDoesNotExist(Exception):
                email (str): User email.
         """
         self.email = email
-        super().__init__(f"User with email '{email}' does not exists.")
+        super().__init__(f"{email} does not exist.")
 
 
 class UserGoogleIdDoesNotExist(Exception):
-    def __init__(self, google_id: str):
+    def __init__(self):
         """
            Raised when attempting to fetch a user with a Google ID that does not exist.
-
-           Args:
-               google_id (str): User Google ID.
         """
-        self.google_id = google_id
-        super().__init__(f"User with Google ID '{google_id}' does not exists.")
+        super().__init__(f"User with this Google ID does not exist.")
 
 
 class UserIdDoesNotExist(Exception):

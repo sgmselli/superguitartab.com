@@ -14,7 +14,7 @@ from app.constants.http_error_codes import (
     HTTP_400_BAD_REQUEST,
     HTTP_404_NOT_FOUND
 )
-from app.services.tab_services import increment_downloads
+from app.services.tab_services import register_user_tab_download
 from app.utils.auth.current_user import get_current_user
 
 router = APIRouter()
@@ -28,7 +28,7 @@ async def get_tab(tab_id: int, session: AsyncSession = Depends(get_session)):
     if not tab:
         raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail="Tab not found")
 
-    presigned_url = S3Client().generate_presigned_url(tab.file_key)
+    presigned_url = S3Client().generate_presigned_url(tab.preview_file_key)
     tab_response = TabResponse.model_validate(tab)
     tab_response.file_url = presigned_url
     return tab_response
@@ -44,7 +44,7 @@ async def get_tab(tab_id: int, session: AsyncSession = Depends(get_session), cur
 
     presigned_url = S3Client().generate_presigned_url(tab.file_key)
     
-    await increment_downloads(tab_id, session)
+    await register_user_tab_download(current_user.id, tab_id, session)
 
     return TabFileUrlResponse(file_url=presigned_url)
 

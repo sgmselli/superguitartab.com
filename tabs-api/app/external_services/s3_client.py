@@ -1,5 +1,4 @@
 from io import BytesIO
-
 import boto3
 from botocore.config import Config
 
@@ -76,6 +75,3 @@ class S3Client:
         except Exception as e:
             Logger.log(LogLevel.ERROR, f"Error deleting object {object_name}: {e}")
             return False
-
-
-

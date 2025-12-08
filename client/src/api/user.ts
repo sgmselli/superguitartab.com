@@ -1,3 +1,4 @@
+import type { TabResponse } from "../types/tab";
 import type { UserResponse, UserCreateRequest, UserLoginRequest } from "../types/user";
 import { api, apiAuth } from "./index";
 
@@ -45,4 +46,11 @@ export async function getCurrentUser(
   const response = await apiAuth.get("/user/current");
   return response.data;
 }
+
+export async function getCurrentUserDownloadedTabs(
+): Promise<TabResponse[]> {
+  const response = await apiAuth.get("/user/current/downloads");
+  return response.data;
+}
+
 

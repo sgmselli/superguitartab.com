@@ -31,8 +31,8 @@ export const Navbar: React.FC = () => {
     ]
 
     const account: DropdownItem[] = [
-        {name: "Account", link: "/account"},
-        {name: "Logout", link: "/logout"},
+        {name: "Downloaded tabs", link: "/account"},
+        {name: "Log out", link: "/logout"},
     ]
 
     return (

@@ -49,7 +49,6 @@ const LevelBadge: React.FC<LevelBadgeProps> = ({level}) => {
 }
 
 const SongTableRow: React.FC<SongTableRowProps> = ({id, song, artist, album, genre, style, level}) => {
-    console.log(album)
     return (
         <tr className="text-color">
             <td className="w-60"><div className="flex flex-col gap-1"><h4 className="text-md text-color font-semibold">{song}</h4><h5 className="text-sm text-gray-500">{album}</h5></div></td>

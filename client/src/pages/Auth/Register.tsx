@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Google } from "../../components/Icons/Icons";
 import { registerUser } from "../../api/user";
 import type { UserCreateRequest } from "../../types/user";
 import { Loading } from "../../components/Loading";
 import usePageTitle from "../../hooks/usePageTitle";
+import { useAuth } from "../../contexts/auth";
 
 type RegisterFieldErrors = {
     email?: string;
     first_name?: string;
     last_name?: string;
     password?: string;
-    confirmPassword?: string;
+    confirm_password?: string;
 };
 
 export const Register: React.FC = () => {
@@ -29,6 +30,10 @@ export const Register: React.FC = () => {
 
     const [fieldErrors, setFieldErrors] = useState<RegisterFieldErrors>({});
 
+    const { login } = useAuth();
+
+    const navigate = useNavigate();
+
     const buildUserData = (): UserCreateRequest => {
         return {
             first_name: firstName,
@@ -41,18 +46,33 @@ export const Register: React.FC = () => {
 
     const handleRegister = async () => {
         setLoading(true);
+        setError(null);
+        setFieldErrors({});
         try {
             await registerUser(buildUserData());
+            await login({email, password});
+            navigate("/account")
         } catch (err: any) {
             if (err?.response?.data?.detail) {
-                const apiErrors: RegisterFieldErrors = {};
+                const detail = err.response.data.detail;
+                
+                // Check if detail is a string (simple error message)
+                if (typeof detail === 'string') {
+                    setError(detail);
+                } 
+                // Check if detail is an array (field validation errors)
+                else if (Array.isArray(detail)) {
+                    const apiErrors: RegisterFieldErrors = {};
 
-                err.response.data.detail.forEach((e: any) => {
-                    const field = e.loc[1] as keyof RegisterFieldErrors;
-                    apiErrors[field] = e.msg;
-                });
+                    detail.forEach((e: any) => {
+                        const field = e.loc[1] as keyof RegisterFieldErrors;
+                        apiErrors[field] = e.msg;
+                    });
 
-                setFieldErrors(apiErrors);
+                    setFieldErrors(apiErrors);
+                } else {
+                    setError("Failed to create account.");
+                }
             } else {
                 setError("Failed to create account.");
             }
@@ -161,15 +181,15 @@ export const Register: React.FC = () => {
                                 <input
                                     type="password"
                                     placeholder="Confirm password"
-                                    className={`input input-lg input-bordered w-full text-sm ${fieldErrors.confirmPassword ? "input-error" : ""}`}
+                                    className={`input input-lg input-bordered w-full text-sm ${fieldErrors.confirm_password ? "input-error" : ""}`}
                                     name="confirm_password"
                                     autoComplete="new-password"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
                                 />
-                                {fieldErrors.confirmPassword && (
-                                    <p className="text-red-500 text-sm mt-1">{fieldErrors.confirmPassword}</p>
+                                {fieldErrors.confirm_password && (
+                                    <p className="text-red-500 text-sm mt-1">{fieldErrors.confirm_password}</p>
                                 )}
                             </label>
 
