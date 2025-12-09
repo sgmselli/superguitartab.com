@@ -21,9 +21,7 @@ router = APIRouter()
 
 @router.get('/login', response_model=UserResponse, status_code=HTTP_200_OK)
 async def auth_google_login(request: Request):
-    redirect_uri = request.url_for("auth_google_callback")
-    Logger.log(LogLevel.DEBUG, redirect_uri)
-    return await google_oath.authorize_redirect(request, redirect_uri)
+    return await google_oath.authorize_redirect(request, settings.google_redirect_url)
 
 @router.get('/callback', response_model=UserResponse, status_code=HTTP_200_OK)
 async def auth_google_callback(

@@ -41,6 +41,7 @@ class BaseAppSettings(BaseSettings):
     digital_ocean_bucket_access_key_id: Optional[str] = None
     digital_ocean_bucket_name: Optional[str] = None
     digital_ocean_bucket_region_name: Optional[str] = None
+    google_redirect_url: Optional[str] = None
 
     @property
     def async_driver_database_url(self) -> str:
