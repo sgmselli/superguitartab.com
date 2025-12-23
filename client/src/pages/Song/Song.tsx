@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { getTabData, downloadTab } from '../../api/tabs';
 import { TabViewer } from './components/TabViewer';
-import { Heart } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { ContentNotFound } from '../../components/ContentNotFound';
 import { Loading } from '../../components/Loading';
 import type { DifficultyLevel } from '../../constants/difficulty';
@@ -13,6 +13,7 @@ import usePageTitle from '../../hooks/usePageTitle';
 import { formatTitle } from '../../utils/wordFormatting';
 import { useAuth } from '../../contexts/auth';
 import { AuthRequiredModal } from '../../components/AuthRequiredModal';
+import { DownloadedModal } from './components/DownloadedModal';
 
 const Song: React.FC = () => {
 
@@ -33,6 +34,7 @@ const Song: React.FC = () => {
     const [fileUrl, setFileUrl] = useState<string | null>(null);
 
     const [showAuthModal, setShowAuthModal] = useState<boolean>(false);
+    const [showDownloadedModal, setShowDownloadedModal] = useState<boolean>(false);
 
     const [loading, setLoading] = useState<boolean>(false);
     // const [error, setError] = useState<string | null>(null);
@@ -106,6 +108,8 @@ const Song: React.FC = () => {
             link.remove();
             window.URL.revokeObjectURL(url);
 
+            setShowDownloadedModal(true);
+
         } catch (error) {
             console.error("Download failed:", error);
         }
@@ -148,8 +152,7 @@ const Song: React.FC = () => {
                     <p className='text-md font-light mt-5' >{description}</p>
 
                     <div className='flex flex-row gap-4 mt-8'>
-                        <button aria-label='Download song button' className='btn btn-lg surface-color secondary-color-bg rounded-lg' onClick={handleDownload}>Download tab</button>
-                        <button className='hidden btn btn-lg surface-color primary-color-bg rounded-lg'><Heart size={18} /> <span className='pl-2'>Support us</span></button>
+                        <button aria-label='Download song button' className='btn btn-xl flex flex-row gap-3 text-lg surface-color border-0 secondary-color-bg rounded-lg' onClick={handleDownload}><Download size={20} /> Download</button>
                     </div>
                     
                     <div className='flex flex-row text-md gap-10 pt-8'>
@@ -191,8 +194,14 @@ const Song: React.FC = () => {
                     navigate('/login');
                 }}
             />
+            <DownloadedModal
+                isOpen={showDownloadedModal}
+                onClose={() => setShowDownloadedModal(false)}
+                songName={songName}
+            />
         </>
     )
 }
+
 
 export default Song;
