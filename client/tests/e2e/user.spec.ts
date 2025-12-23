@@ -16,7 +16,7 @@ test('Account page shows empty state when no downloads', async ({ page }) => {
     })
   ).toBeVisible();
 
-  await expect(page.getByText("Oh no, you haven't downloaded any tabs yet")).toBeVisible();
+  await expect(page.getByText("You have no downloaded songs. You can browse our selection of music sheets to download here.")).toBeVisible();
 });
 
 test('Account page shows downloaded tabs table when present', async ({ page }) => {
