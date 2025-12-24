@@ -23,8 +23,7 @@ class EmailClient:
         if data:
             message.params = data
         try:
-            response = self.client.send_transac_email(message)
-            Logger.log(LogLevel.INFO, f"status code: {response.status_code}, body: {response.body}, headers: {response.headers}")
+            self.client.send_transac_email(message)
         except Exception as e:
             Logger.log(LogLevel.ERROR, str(e))
 

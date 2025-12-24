@@ -58,7 +58,10 @@ async def auth_google_callback(
                     google_id=google_id
                 )
                 user = await create_user_without_password(user_create, session)
-                task_send_welcome_email.delay(user.email, user.first_name)
+                try:
+                    task_send_welcome_email.delay(user.email, user.first_name)
+                except:
+                    Logger.log(LogLevel.ERROR, "Failed to send welcome email on Google OAuth register")
 
         access_token = create_access_token({"sub": str(user.id)})
         refresh_token = create_refresh_token({"sub": str(user.id)})
