@@ -47,6 +47,8 @@ class BaseAppSettings(BaseSettings):
     redis_port: Optional[int] = None
     redis_db: Optional[int] = None
     redis_password: Optional[str] = None
+    brevo_api_key: Optional[str] = None
+    from_email: Optional[str] = None
 
     @property
     def async_driver_database_url(self) -> str:

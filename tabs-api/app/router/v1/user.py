@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.celery.tasks.email_tasks import task_send_welcome_email
 from app.db.session import get_session
 from app.exceptions.user import UserAlreadyExists
 from app.schema.tab import TabResponse
@@ -42,6 +43,9 @@ async def register_user(user_create: UserCreate, session: AsyncSession = Depends
         user = await user_services.create_user_with_password(user_create, session)
     except UserAlreadyExists as e:
         raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=str(e))
+
+    task_send_welcome_email.delay(user.email, user.first_name)
+
     return UserResponse.model_validate(user)
 
 @router.get("/current/downloads", status_code=HTTP_200_OK, response_model=list[TabResponse])

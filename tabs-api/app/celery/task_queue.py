@@ -8,5 +8,5 @@ celery_task_queue = Celery(
     "worker",
     broker=redis_url,
     backend=redis_url,
-    include=["app.celery.tasks"]
+    include=["app.celery.tasks.email_tasks"]
 )
