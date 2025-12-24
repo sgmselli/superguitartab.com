@@ -41,5 +41,17 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_HOST=db
 
+  worker:
+    build:
+      context: ../tabs-api
+    command: celery -A app.celery.task_queue.celery_task_queue worker --loglevel=info
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
 volumes:
   db_data:

@@ -43,6 +43,10 @@ class BaseAppSettings(BaseSettings):
     digital_ocean_bucket_region_name: Optional[str] = None
     google_redirect_url: Optional[str] = None
     cdn_bucket_base_url: Optional[str] = None
+    redis_host: Optional[str] = None
+    redis_port: Optional[int] = None
+    redis_db: Optional[int] = None
+    redis_password: Optional[str] = None
 
     @property
     def async_driver_database_url(self) -> str:
