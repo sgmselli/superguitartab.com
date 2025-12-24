@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.responses import RedirectResponse
 from starlette.status import HTTP_400_BAD_REQUEST
 
+from app.celery.tasks.email_tasks import task_send_welcome_email
 from app.core.config import settings
 from app.db.session import get_session
 from app.exceptions.user import UserGoogleIdDoesNotExist, UserEmailDoesNotExist
@@ -57,6 +58,7 @@ async def auth_google_callback(
                     google_id=google_id
                 )
                 user = await create_user_without_password(user_create, session)
+                task_send_welcome_email.delay(user.email, user.first_name)
 
         access_token = create_access_token({"sub": str(user.id)})
         refresh_token = create_refresh_token({"sub": str(user.id)})
