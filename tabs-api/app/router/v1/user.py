@@ -14,6 +14,7 @@ from app.constants.http_error_codes import (
 import app.services.user_services as user_services
 from app.models.user import User
 from app.utils.auth.current_user import get_current_user_or_raise_http_error
+from app.utils.logging import LogLevel, Logger
 
 router = APIRouter()
 
@@ -44,7 +45,10 @@ async def register_user(user_create: UserCreate, session: AsyncSession = Depends
     except UserAlreadyExists as e:
         raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=str(e))
 
-    task_send_welcome_email.delay(user.email, user.first_name)
+    try:
+        task_send_welcome_email.delay(user.email, user.first_name)
+    except:
+        Logger.log(LogLevel.ERROR, "Failed to send welcome email on register")
 
     return UserResponse.model_validate(user)
 
