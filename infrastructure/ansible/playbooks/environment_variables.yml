@@ -38,3 +38,8 @@
           GOOGLE_CLIENT_SECRET={{ google_client_secret }}
           GOOGLE_CLIENT_ID={{ google_client_id }}
           CDN_BUCKET_BASE_URL={{ cdn_bucket_base_url }}
+          REDIS_HOST={{ redis_host }}
+          REDIS_PORT={{ redis_port }}
+          REDIS_DB={{ redis_db }}
+          BREVO_API_KEY={{ brevo_api_key }}
+          FROM_EMAIL={{ from_email }}
